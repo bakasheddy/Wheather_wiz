@@ -8,7 +8,7 @@ Code file | Description
 ---|---------
 `scraper.py` | Downloades weather data web pages from Weather Underground
 `parser.py` | Parses the weather data from Weather Underground into a flat CSV file
-`visualize_weather.py` | Creates the visualization of the weather data
+
 
 #### Data
 
