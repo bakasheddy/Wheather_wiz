@@ -1,6 +1,8 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime, timedelta
 
 # Specify the base URL and folder path
@@ -13,7 +15,7 @@ folder_path = 'C:\\Users\\Baka sheddy.DESKTOP-H27QSPR\\Desktop\\weather/'
 os.makedirs(folder_path, exist_ok=True)
 
 # Specify the start and end dates
-start_date = datetime(2014, 1, 1)
+start_date = datetime(2015, 1, 1)
 end_date = datetime(2023, 1, 1)
 
 # Define the time delta for incrementing the date
@@ -36,13 +38,15 @@ while current_date < end_date:
     # Open the URL in the browser
     driver.get(url)
 
-    # Simulate clicking the "View" button (replace with the appropriate selector for your webpage)
-    # Replace 'view-button' with the actual ID or selector
-    view_button = driver.find_element(By.ID, "dateSubmit")
+    # Wait for the "View" button to be clickable
+    wait = WebDriverWait(driver, 7)  # Adjust the timeout value as needed
+    view_button = wait.until(EC.element_to_be_clickable((By.ID, 'dateSubmit')))
+
+    # Click the "View" button
     view_button.click()
 
     # Wait for the tables to load (adjust the waiting time as needed)
-    driver.implicitly_wait(10)  # Wait for 5 seconds (modify as required)
+    driver.implicitly_wait(7)  # Wait for 5 seconds (modify as required)
 
     # Get the page source with the loaded tables
     page_source = driver.page_source
