@@ -6,8 +6,8 @@ The raw data and code behind the story [What 12 Months Of Record-Setting Tempera
 
 Code file | Description
 ---|---------
-`wunderground_scraper.py` | Downloades weather data web pages from Weather Underground
-`wunderground_parser.py` | Parses the weather data from Weather Underground into a flat CSV file
+`scraper.py` | Downloades weather data web pages from Weather Underground
+`parser.py` | Parses the weather data from Weather Underground into a flat CSV file
 `visualize_weather.py` | Creates the visualization of the weather data
 
 #### Data
