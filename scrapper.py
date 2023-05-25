@@ -5,10 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime, timedelta
 
-# Specify the base URL and folder path
-# Replace with the website URL
+
 base_url = 'https://www.wunderground.com/history/daily/DNAA/date/'
-# Replace with the desired folder path
+
 folder_path = 'C:\\Users\\Baka sheddy.DESKTOP-H27QSPR\\Desktop\\weather/'
 
 # Create the folder if it doesn't exist
@@ -22,7 +21,6 @@ end_date = datetime(2023, 1, 1)
 delta = timedelta(days=1)
 
 # Set up the Selenium WebDriver (specify the appropriate driver for your browser)
-# Replace with the path to your chromedriver
 driver = webdriver.Chrome('C:\\Program Files\\chrome_driver\\chromedriver')
 
 # Iterate over the range of dates
@@ -32,21 +30,20 @@ while current_date < end_date:
     formatted_date = current_date.strftime('%Y-%m-%d')
 
     # Construct the URL for the specific date
-    # Modify this according to the website's URL structure
     url = base_url + formatted_date
 
     # Open the URL in the browser
     driver.get(url)
 
     # Wait for the "View" button to be clickable
-    wait = WebDriverWait(driver, 7)  # Adjust the timeout value as needed
+    wait = WebDriverWait(driver, 20)  # Adjust the timeout value as needed
     view_button = wait.until(EC.element_to_be_clickable((By.ID, 'dateSubmit')))
 
     # Click the "View" button
     view_button.click()
 
     # Wait for the tables to load (adjust the waiting time as needed)
-    driver.implicitly_wait(7)  # Wait for 5 seconds (modify as required)
+    driver.implicitly_wait(20)  # Wait for 20 seconds (modify as required)
 
     # Get the page source with the loaded tables
     page_source = driver.page_source
