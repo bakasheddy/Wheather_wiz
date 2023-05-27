@@ -17,7 +17,7 @@ Parameter | Description
 `windspeed_10m` | Wind speed at 10 meters above ground. Wind speed on 10 meters is the standard level.
 `winddirection_10m` | Wind direction at 10 meters above ground
 
-#### notes: 
+#### note: 
 this data is a Weather history for Abuja, minna, keffi, and lagos Nigeria
 
 
