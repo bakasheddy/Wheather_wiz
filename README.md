@@ -1,4 +1,4 @@
-### Weather History For Abuja, Nigeri, minna, keffi, and lagos
+### Weather History For Abuja, minna, keffi, and lagos Nigeria
 
 #### Data
 
